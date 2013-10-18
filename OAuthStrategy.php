@@ -78,15 +78,13 @@ class OAuthStrategy extends OpauthStrategy {
                                 $this->auth = array(
                                         'uid' => $user['user']['user_id'],
                                         'info' => array(),
+                                        'nickname' => $user['user']['username'],
+                                        'email' => (isset($user['user']['email']) ? $user['user']['email'] : ""), // One doesn't /need/ an email... right?
                                         'credentials' => array(
                                                 'token' => $results['access_token']
                                         ),
                                         'raw' => $user
                                 );
-                                
-                                $this->mapProfile($user, 'username', 'user.username');
-                                $this->mapProfile($user, 'avatar_url', 'user.links.avatar');
-                                $this->mapProfile($user, 'user_id', 'user.user_id');
                                 
                                 $this->callback();
                         }
