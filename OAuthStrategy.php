@@ -79,7 +79,7 @@ class OAuthStrategy extends OpauthStrategy {
                                         'uid' => $user['user']['user_id'],
                                         'info' => array(),
                                         'credentials' => array(
-                                                'token' => $results['oauth_token']
+                                                'token' => $results['access_token']
                                         ),
                                         'raw' => $user
                                 );
