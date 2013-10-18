@@ -65,6 +65,7 @@ class OAuthStrategy extends OpauthStrategy {
                                 'client_id' => $this->strategy['client_id'],
                                 'client_secret' => $this->strategy['client_secret'],
                                 'redirect_uri' => $this->strategy['redirect_uri'],
+                                'grant_type' => 'authorization_code',
                         );
                         if (!empty($this->strategy['state'])) $params['state'] = $this->strategy['state'];
                         
