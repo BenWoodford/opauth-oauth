@@ -79,7 +79,7 @@ class OAuthStrategy extends OpauthStrategy {
                                         'uid' => $user['user']['user_id'],
                                         'info' => array(),
                                         'nickname' => $user['user']['username'],
-                                        'email' => (isset($user['user']['email']) ? $user['user']['email'] : ""), // One doesn't /need/ an email... right?
+                                        'email' => $user['user']['user_email'],
                                         'credentials' => array(
                                                 'token' => $results['access_token']
                                         ),
