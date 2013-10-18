@@ -58,7 +58,7 @@ class GitHubStrategy extends OpauthStrategy {
         public function oauth2callback() {
                 if (array_key_exists('code', $_GET) && !empty($_GET['code'])) {
                         $code = $_GET['code'];
-                        $url = $this->strategy['access_token_url']
+                        $url = $this->strategy['access_token_url'];
                         
                         $params = array(
                                 'code' => $code,
