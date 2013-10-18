@@ -73,7 +73,10 @@ class OAuthStrategy extends OpauthStrategy{
 	 */
 	public function request(){
 		$params = array(
-			'oauth_callback' => $this->strategy['oauth_callback']
+			'oauth_callback' => $this->strategy['oauth_callback'],
+			'scope' => 'read',
+			'response_type' => 'code',
+			'client_id' => $this->strategy['consumer_key'],
 		);
 
 		$results =  $this->_request('GET', $this->strategy['request_token_url'], $params);
