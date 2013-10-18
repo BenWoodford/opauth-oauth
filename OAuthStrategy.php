@@ -114,7 +114,7 @@ class OAuthStrategy extends OpauthStrategy {
         }
         
         private function user($access_token) {
-                $user = $this->serverGet($this->strategy['api_user_endpoint'], array('access_token' => $access_token), null, $headers);
+                $user = $this->serverGet($this->strategy['api_user_endpoint'], array('access_token' => $access_token, 'client_id' => $this->strategy['client_id']), null, $headers);
 
                 if (!empty($user)) {
                         return $this->recursiveGetObjectVars(json_decode($user));
