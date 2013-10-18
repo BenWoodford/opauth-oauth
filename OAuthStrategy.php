@@ -70,7 +70,7 @@ class OAuthStrategy extends OpauthStrategy {
                         if (!empty($this->strategy['state'])) $params['state'] = $this->strategy['state'];
                         
                         $response = $this->serverPost($url, $params, null, $headers);
-                        json_decode($response, $results);
+                        $results = json_decode($response);
                         
                         if (!empty($results) && !empty($results['access_token'])) {
                                 $user = $this->user($results['access_token']);
