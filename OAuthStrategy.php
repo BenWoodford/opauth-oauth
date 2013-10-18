@@ -76,7 +76,7 @@ class OAuthStrategy extends OpauthStrategy{
 			'oauth_callback' => $this->strategy['oauth_callback']
 		);
 
-		$results =  $this->_request('POST', $this->strategy['request_token_url'], $params);
+		$results =  $this->_request('GET', $this->strategy['request_token_url'], $params);
 		
 		if ($results !== false && !empty($results['oauth_token']) && !empty($results['oauth_token_secret'])){
 			if (!session_id()){
