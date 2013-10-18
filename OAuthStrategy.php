@@ -76,10 +76,10 @@ class OAuthStrategy extends OpauthStrategy {
                                 $user = $this->user($results['access_token']);
                                 
                                 $this->auth = array(
-                                        'uid' => $user['id'],
+                                        'uid' => $user['user_id'],
                                         'info' => array(),
                                         'credentials' => array(
-                                                'token' => $results['access_token']
+                                                'token' => $results['oauth_token']
                                         ),
                                         'raw' => $user
                                 );
