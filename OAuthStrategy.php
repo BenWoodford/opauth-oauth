@@ -15,7 +15,7 @@
  * 
  * @package                        Opauth.GitHub
  */
-class GitHubStrategy extends OpauthStrategy {
+class OAuthStrategy extends OpauthStrategy {
         
         /**
          * Compulsory config keys, listed as unassociative arrays
